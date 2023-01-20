@@ -11,7 +11,7 @@ namespace AlgorithmPrograms
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome To Algorithm Programs");
-            Console.WriteLine("1.Permutation\n2.Binary Search Word\n3.Insertion Sort word\n4.Bubble Sort ");
+            Console.WriteLine("1.Permutation\n2.Binary Search Word\n3.Insertion Sort word\n4.Bubble Sort\n5.Merge Sort ");
             int Choice = Convert.ToInt32(Console.ReadLine());
             switch (Choice)
             {
@@ -49,6 +49,16 @@ namespace AlgorithmPrograms
                     bubble.bubbleSort(arr1, m);
                     Console.WriteLine("Sorted array");
                     bubble.printArray(arr1, m);
+                    break;
+                case 5:
+                    MergeSort mergeSort = new MergeSort();
+                    int[] B = { 2, 3, 8, -1, 7, 10 };
+                    int z = B.Length;
+                    mergeSort.mergeTwoHalf(B, z);
+                    for (int i = 0; i < z; i++)
+                    {
+                        Console.Write(B[i] + " ");
+                    } 
                     break;
             }
         }
