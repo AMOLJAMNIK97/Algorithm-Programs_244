@@ -11,7 +11,7 @@ namespace AlgorithmPrograms
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome To Algorithm Programs");
-            Console.WriteLine("1.Permutation\n2.Binary Search Word\n3.Insertion Sort word\n4.Bubble Sort\n5.Merge Sort\n6.Anagram Detections\n7.Prime Number ");
+            Console.WriteLine("1.Permutation\n2.Binary Search Word\n3.Insertion Sort word\n4.Bubble Sort\n5.Merge Sort\n6.Anagram Detections\n7.Prime Number\n8.search And Sort ");
             int Choice = Convert.ToInt32(Console.ReadLine());
             switch (Choice)
             {
@@ -67,6 +67,29 @@ namespace AlgorithmPrograms
                 case 7:
                     PrimeNumber prime = new PrimeNumber();
                     prime.PrimeNum();
+                    break;
+                case 8:
+                    Search_and_SortAlgorithms search_And_Sort = new Search_and_SortAlgorithms();
+                    const int nItems = 20;
+                    Random rdn = new Random(nItems);
+                    int[] xdata = new int[nItems];
+                    search_And_Sort.MixDataUp(ref xdata, rdn); //Randomize data to be searched
+                    search_And_Sort.DisplayElements(ref xdata, 'b', ""); //Display random data
+
+                    Console.WriteLine("Using LINEAR SEARCH ALGORITHM " +
+                            "to look for 4th data entry in randomized list");
+                    //Look for the 4th data entry in the list
+                    int location = search_And_Sort.LinearSearch(ref xdata, xdata[4]);
+                    if (location == -1)
+                        Console.WriteLine("Value was not found in list");
+                    else
+                        Console.WriteLine("Found it at location = {0}", location);
+                    location = search_And_Sort.LinearSearch(ref xdata, 19); //Look for the number 19 in the list.
+                    if (location == -1)
+                        Console.WriteLine("Value of 19 was not found in list");
+                    else
+                        Console.WriteLine("Value of 19 was found at location = {0}", location);
+                    Console.WriteLine("\n\n");
                     break;
             }
         }
